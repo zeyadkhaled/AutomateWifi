@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/gradient"
+  tools:context="com.zeyad.automatewifi.MainActivity">
+
+  <RelativeLayout
+    android:id="@+id/logo_rlt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+      android:id="@+id/word_logo"
+      android:layout_width="match_parent"
+      android:layout_height="120dp"
+      android:layout_marginTop="40dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      app:srcCompat="@drawable/logo"/>
+
+  </RelativeLayout>
+  <TextView
+    android:id="@+id/hello"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Toggle WiFi at a scheduled time!"
+    android:textAlignment="center"
+    android:textColor="@color/colorWhite"
+    android:textSize="18sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.502"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/logo_rlt"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.35000002"/>
+
+
+  <EditText
+    android:id="@+id/timeSelector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:ems="10"
+    android:inputType="time"
+    android:text="Click to select time"
+    android:textAlignment="center"
+    android:windowSoftInputMode="stateAlwaysHidden"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.502"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.576"/>
+
+
+  <Button
+    android:id="@+id/schedule"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@drawable/ripple"
+    android:enabled="false"
+    android:text="Schedule"
+    android:textColor="@color/colorAccentSecondary"
+    app:layout_constraintHorizontal_bias="0.128"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/timeSelector"/>
+  <Button
+    android:id="@+id/deschedule"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@drawable/ripple"
+    android:enabled="false"
+    android:text="De-schedule"
+    android:textColor="@color/colorAccentSecondary"
+    app:layout_constraintHorizontal_bias="0.876"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/timeSelector"/>
+
+  <RadioGroup
+    android:id="@+id/wifi"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:orientation="horizontal"
+    app:layout_constraintHorizontal_bias="0.501"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/hello">
+    <RadioButton
+      android:id="@+id/wifion"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:checked="true"
+      android:text="On"
+      app:layout_constraintHorizontal_bias="0.501"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"/>
+    <RadioButton
+      android:id="@+id/wifioff"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:text="Off"
+      app:layout_constraintHorizontal_bias="0.501"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      />
+  </RadioGroup>
+
+
+</android.support.constraint.ConstraintLayout>
