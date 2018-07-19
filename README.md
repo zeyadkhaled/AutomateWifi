@@ -2,9 +2,9 @@
 An application to toggle wifi to a desired state at a desired scheduled time
 
 ## Screens
-![First Screen](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/start.png)
-![Selecting Time](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/selecttime.png)
-![Time Selected](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/time%20selected.png)
+![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/start.png)
+![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/selecttime.png)
+![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/time%20selected.png)
 
 ## Usage
 - Select which state do you want to set WiFi to
@@ -12,5 +12,6 @@ An application to toggle wifi to a desired state at a desired scheduled time
 - Click schedule to schedule
 - If changes are needed, click de-schedule and restart process
 
-
+## Download
+[Google Drive](https://drive.google.com/file/d/1LmNl7TiyavVbySFEP-KmZgsXjJKw1Fje/view?usp=sharing)
 
