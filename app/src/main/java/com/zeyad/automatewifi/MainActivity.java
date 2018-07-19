@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
     time.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View view) {
+        // Hide keyboard
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         timePickerDialog = new TimePickerDialog(MainActivity.this,
             new TimePickerDialog.OnTimeSetListener() {
 
@@ -75,10 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 hour = hourOfDay;
                 minutes = minute;
                 schedule.setEnabled(true);
-
-                // Hide keyboard
-                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
               }
             }, hour, minutes, false);
