@@ -2,6 +2,7 @@
 An application to toggle wifi to a desired state at a desired scheduled time
 
 ## Screens
+<img src="https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/start.png" alt="alt text" width="180" height="320">
 ![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/start.png)
 ![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/selecttime.png)
 ![alt text](https://raw.githubusercontent.com/zeyadkhaled/AutomateWifi/master/app/src/main/res/screens/time%20selected.png)
