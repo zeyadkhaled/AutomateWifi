@@ -90,41 +90,36 @@ public class MainActivity extends AppCompatActivity {
   public void schedule() {
 
     long delay = findDelay();
-    if ( delay > 0) { // if selected time is wrong display error
+    schedule.setEnabled(false);
+    deSchedule.setEnabled(true);
 
-      schedule.setEnabled(false);
-      deSchedule.setEnabled(true);
+    TimerTask closeWifi = new TimerTask() {
+      @Override
+      public void run() {
 
-      TimerTask closeWifi = new TimerTask() {
-        @Override
-        public void run() {
+        Looper.prepare();
+        int selectedId = wifiStateSelect.getCheckedRadioButtonId();
+        wifiState = findViewById(selectedId);
+        String stateResult = wifiState.getText().toString();
+        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
-          Looper.prepare();
-          int selectedId = wifiStateSelect.getCheckedRadioButtonId();
-          wifiState = findViewById(selectedId);
-          String stateResult = wifiState.getText().toString();
-          WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
-          if (stateResult.equals("On")) {
-            wifiManager.setWifiEnabled(true);
-          } else {
-            wifiManager.setWifiEnabled(false);
-          }
+        if (stateResult.equals("On")) {
+          wifiManager.setWifiEnabled(true);
+        } else {
+          wifiManager.setWifiEnabled(false);
         }
-      };
-
-      timer = new Timer();
-      timer.schedule( closeWifi , delay);
-
-      //Handle single digit minutes
-      String minStr = minutes + "";
-      if ( minStr.length() == 1) {
-        minStr = "0" + minStr;
       }
-      Toast.makeText(getApplicationContext(), "Task Scheduled at " + hour + ":" + minStr, Toast.LENGTH_LONG).show();
+    };
 
-    } else
-      Toast.makeText(getApplicationContext(), "Invalid time selected", Toast.LENGTH_LONG).show();
+    timer = new Timer();
+    timer.schedule( closeWifi , delay);
+
+    //Handle single digit minutes
+    String minStr = minutes + "";
+    if ( minStr.length() == 1) {
+      minStr = "0" + minStr;
+    }
+    Toast.makeText(getApplicationContext(), "Task Scheduled at " + hour + ":" + minStr, Toast.LENGTH_LONG).show();
   }
 
   private void deSchedule() {
@@ -145,7 +140,10 @@ public class MainActivity extends AppCompatActivity {
     cal.set(Calendar.MINUTE, minutes);
     cal.set(Calendar.SECOND, 0);
     cal.set(Calendar.MILLISECOND, 0);
-    return cal.getTimeInMillis() - now;
+    long result =  cal.getTimeInMillis() - now;
+    if ( result < 0) //If delay is negative add a day in milliseconds
+      result += 86400000;
+    return result;
   }
 
   private void bindViews() {
