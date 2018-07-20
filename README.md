@@ -16,4 +16,7 @@ An application to toggle wifi to a desired state at a desired scheduled time
 ## Download
 [Google Drive](https://drive.google.com/file/d/1LmNl7TiyavVbySFEP-KmZgsXjJKw1Fje/view?usp=sharing)
 
+## Author
+[Zeyad Khaled](https://www.linkedin.com/in/zeyadkhaled/ "Zeyad Khaled")
+
 
